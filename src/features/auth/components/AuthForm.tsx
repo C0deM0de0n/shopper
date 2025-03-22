@@ -1,24 +1,39 @@
 'use client'
+import { useRef, useState } from 'react';
 import Form from 'next/form'
 import { useForm } from 'react-hook-form';
-import { Button } from '@mui/material';
+import { useAuthHook } from '../hooks/useAuth';
 import { Input } from '../ui/input';
-import { IAuthForm } from '../types/authForm';
+import { useModalRef, IUser } from '@/shared';
+import { AuthButton } from './AuthButton';
 
 export const AuthForm = ({ }) => {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<IAuthForm>()
+  const closeRef = useRef<HTMLFormElement | null>(null)
+  const [isLogin, setIsLoding] = useState<boolean>(true)
+  const { authUser, isLoadingAuth, isErrorAuth } = useAuthHook()
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<IUser>()
+
+  const setAuhtType = () => setIsLoding(!isLogin) 
+  
+  const onSubmit = (data: IUser) => {
+    const type = isLogin ? 'login' : 'register'
+    authUser({type, data, reset})
+  }
+
+  useModalRef(closeRef)
 
   return (
     <Form
+      ref={closeRef}
       className='flex flex-col gap-5 w-96 h-96 p-5 bg-white rounded-2xl'
       formMethod='POST'
+      onSubmit={handleSubmit(onSubmit)}
       action={''}>
-      <h1 className='text-2xl'>{'Войти'}</h1>
+      <h1 className='text-2xl'>{`${isLogin ? 'Войти' : 'Создать'}`}</h1>
       <Input register={register} errors={errors} />
-      <div className='flex items-center justify-center gap-5 w-full h-10'>
-        <Button size={'large'} type={'submit'} variant={'outlined'}>Войти</Button>
-        <Button size={'large'} type={'submit'} variant={'outlined'}>Создать</Button>
-      </div>
+      <AuthButton isLogin={isLogin} setAuhtType={setAuhtType}/>
+      {isLoadingAuth && <p className='text-center'>loading</p>}
+      {isErrorAuth && <p className='tetx-center'>something went wrong please try again</p>}
     </Form>
   )
 };

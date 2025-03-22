@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export async function checkAuth(req: NextRequest) {
     const token = req.headers.get('authorization')?.split(' ')[1]
-    if(!token) throw {message: 'token not passed'}
+    if(!token) throw {message: 'Token not passed'}
     try {
         const secret = process.env.JWT_SECRET || ''
         const decoded = jwt.verify(token, secret)

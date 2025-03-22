@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { TextField } from '@mui/material'
 import type { UseFormRegister, FieldErrors } from 'react-hook-form';
-import { IAuthForm } from '../types/authForm';
+import { IUser } from '@/shared';
 
 interface Props {
-    register: UseFormRegister<IAuthForm>
-    errors: FieldErrors<IAuthForm>
+    register: UseFormRegister<IUser>
+    errors: FieldErrors<IUser>
 }
 
 export const Input: FC<Props> = ({ register, errors }) => {

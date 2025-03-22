@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { Logo } from './components/Logo';
-import { AuthButton } from './components/AuthButton';
+import { Profile } from './components/profile';
 
-interface Props {}
+interface Props { }
 
-export const Header: FC<Props> = ({}) => {
+export const Header: FC<Props> = ({ }) => {
+
   return (
-    <div className='flex items-center justify-between w-full h-44'>
-        <Logo />
-        <AuthButton />
+    <div className="flex items-center justify-between w-full h-44">
+      <Logo />
+      <Profile/>
     </div>
   );
 };

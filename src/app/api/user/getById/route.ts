@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
         const userId = await checkAuth(req)
         const isExistUser = await getUserById(userId)
 
-        if(!isExistUser) return NextResponse.json({ message: 'Пользователь не найден' }, { status: 404 })
+        if(!isExistUser) return NextResponse.json({ message: 'User not found' }, { status: 404 })
 
         const { password, ...user } = isExistUser
 

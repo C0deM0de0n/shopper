@@ -8,12 +8,12 @@ import { saveRefreshToken } from "./save-token-cookie";
 export async function login(data: AuthDto) {
     const isExistUser = await getUserByEmail(data.email)
     if(!isExistUser) {
-        return NextResponse.json({ message: 'Пользователь не найден' }, { status: 404 })
+        return NextResponse.json({ message: 'User not found' }, { status: 404 })
     }
 
     const isValidaPass = await validationPass(data.password, isExistUser.password)
     if(!isValidaPass) {
-        return NextResponse.json({ message: 'Неверная почта или пароль' }, { status: 400 })
+        return NextResponse.json({ message: 'Invalid email or password' }, { status: 400 })
     } 
 
     const { password, ...user } = isExistUser

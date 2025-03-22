@@ -1,7 +1,4 @@
-import { useAppDispatch, useAppSelector } from "@/shared/redux/store";
-import { setAuthModal } from "@/shared/redux/slices/auth-slice";
-import Cookie from 'js-cookie'
-import { AuthModal } from "@/widgets";
+import { AuthModal } from "@/shared";
 
 export default function Home() {
 
