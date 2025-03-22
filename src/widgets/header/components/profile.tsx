@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import { useUserHook } from '@/shared';
 import { CycleProfile } from '@/enteties';
-import { AuthButton } from './AuthButton';
+import { AuthButton } from '@/features';
 
 interface Props { }
 

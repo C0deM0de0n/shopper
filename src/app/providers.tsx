@@ -1,7 +1,7 @@
 'use client'
 import { FC, PropsWithChildren, useState } from 'react';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { store } from '@/shared/redux/store';
+import { store } from './store';
 import { Provider } from 'react-redux';
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => {

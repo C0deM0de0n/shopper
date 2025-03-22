@@ -1,4 +1,4 @@
-import { AuthModal } from "@/shared";
+import { AuthModal } from "@/features";
 
 export default function Home() {
 

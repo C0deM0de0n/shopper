@@ -1,25 +1,18 @@
+'use client'
 import { FC } from 'react';
-import { Button } from '@mui/material';
+import { useAppDispatch } from '@/app/store';
+import { setAuthModal } from '../model/auth-slice';
 
-interface Props { 
-    isLogin: boolean
-    setAuhtType: () => void
-}
+interface Props { }
 
-export const AuthButton: FC<Props> = ({ isLogin, setAuhtType }) => {
-    return (
-        <div className='flex items-center justify-center gap-5 w-full h-10'>
-            <Button
-                className='w-full h-10'
-                type={'button'}
-                variant={'outlined'}
-                onClick={() => setAuhtType()}
-            >
-                {isLogin ? 'sign out': 'login'}
-            </Button>
-            <Button className='w-full h-10' type={'submit'} variant={'contained'}>
-                {isLogin ? 'login' : 'sign out'}
-            </Button>
-        </div>
-    );
+export const AuthButton: FC<Props> = ({ }) => {
+  const dispatch = useAppDispatch()
+
+  return (
+    <button
+      onClick={() => dispatch(setAuthModal(true))}
+      className='w-60 h-14 bg-[#10B981] rounded-2xl cursor-pointer'>
+      <p className='text-white'>Login or Sign Up</p>
+    </button>
+  );
 };

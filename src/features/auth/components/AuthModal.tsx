@@ -1,13 +1,13 @@
 'use client'
 import { FC } from 'react';
-import { AuthForm } from '@/features';
+import { AuthForm } from './AuthForm';
 import { useUserHook } from '@/shared';
-import { useAppSelector } from '../redux/store';
+import { useAppSelector } from '@/app/store';
 
 interface Props { }
 
 export const AuthModal: FC<Props> = ({ }) => {
-  const { authModal } = useAppSelector(state => state.authModal)
+  const { authModal } = useAppSelector(state => state.authSlice)
   const { user, isSuccessUser, isErrorUser } = useUserHook()
 
   if (isSuccessUser && user) return null

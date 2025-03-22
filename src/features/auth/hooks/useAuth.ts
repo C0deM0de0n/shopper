@@ -12,7 +12,7 @@ export const useAuthHook = () => {
         isSuccess: isSuccessAuth,
         isError: isErrorAuth
     } = useMutation({
-        mutationKey: ['register'],
+        mutationKey: ['auth'],
         mutationFn: (
             data: {
                 type: 'login' | 'register', 

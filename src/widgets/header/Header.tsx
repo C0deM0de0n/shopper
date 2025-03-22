@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Logo } from './components/Logo';
-import { Profile } from './components/profile';
+import { Profile } from './components/Profile';
 
 interface Props { }
 

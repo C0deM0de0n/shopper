@@ -3,9 +3,10 @@ import { useRef, useState } from 'react';
 import Form from 'next/form'
 import { useForm } from 'react-hook-form';
 import { useAuthHook } from '../hooks/useAuth';
-import { Input } from '../ui/input';
+import { Input } from '../ui/Input';
 import { useModalRef, IUser } from '@/shared';
-import { AuthButton } from './AuthButton';
+import { FormButton } from './FormButton';
+import { setAuthModal } from '../model/auth-slice';
 
 export const AuthForm = ({ }) => {
   const closeRef = useRef<HTMLFormElement | null>(null)
@@ -20,7 +21,11 @@ export const AuthForm = ({ }) => {
     authUser({type, data, reset})
   }
 
-  useModalRef(closeRef)
+  useModalRef({ 
+    closeRef, 
+    reduxFC: setAuthModal,
+    data: false
+  })
 
   return (
     <Form
@@ -31,7 +36,7 @@ export const AuthForm = ({ }) => {
       action={''}>
       <h1 className='text-2xl'>{`${isLogin ? 'Войти' : 'Создать'}`}</h1>
       <Input register={register} errors={errors} />
-      <AuthButton isLogin={isLogin} setAuhtType={setAuhtType}/>
+      <FormButton isLogin={isLogin} setAuhtType={setAuhtType}/>
       {isLoadingAuth && <p className='text-center'>loading</p>}
       {isErrorAuth && <p className='tetx-center'>something went wrong please try again</p>}
     </Form>
