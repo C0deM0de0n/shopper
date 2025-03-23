@@ -21,10 +21,13 @@ export const getAccessToken = () => {
 }
 
 export const saveTokenStorage = (accessToken: string) => {
+    const oneHourFromNow = new Date();
+    oneHourFromNow.setHours(oneHourFromNow.getHours() + 1);
+
     Cookies.set(TokenType.accessToken, accessToken, {
         domain: 'localhost',
         sameSite: 'Strict',
-        expires: 1
+        expires: oneHourFromNow
     })
 }
 

@@ -29,7 +29,7 @@ axiosWithAuth.interceptors.response.use(
         if(
             error?.response?.status === 401 ||
             errorCatch(error) === 'Invalid or expired token' || 
-            errorCatch(error) === 'jwt must be provided' &&
+            errorCatch(error) === 'Token not passed' &&
             error.config && !error.config._IsRerty
         ) {
             originalRequest._IsRerty = true

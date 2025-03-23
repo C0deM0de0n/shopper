@@ -4,7 +4,7 @@ import { TokenType, TokenExpiration } from "@/shared";
 
 export function saveRefreshToken(res: NextResponse, refreshToken: string) {
   const expiresIn = new Date();
-  expiresIn.setDate(expiresIn.getDate() + Number(TokenExpiration.refreshToken));
+  expiresIn.setDate(expiresIn.getDate() + 7);
 
   res.cookies.set(TokenType.refreshToken, refreshToken, {
     httpOnly: true,

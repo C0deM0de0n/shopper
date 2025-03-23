@@ -15,7 +15,10 @@ export const AuthModal: FC<Props> = ({ }) => {
   return (
     <>
       {(isErrorUser && authModal) &&
-        <div className='fixed top-0 left-0 flex items-center justify-center w-full h-full bg-[#0000003d]'>
+        <div 
+            className='
+              fixed top-0 left-0 flex items-center justify-center w-full h-full bg-[#0000003d] z-100
+            '>
           <AuthForm/>
         </div>
       }
