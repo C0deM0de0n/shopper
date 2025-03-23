@@ -4,7 +4,7 @@ export {
     getNewTokens, 
     getAccessToken, 
     saveTokenStorage,
-    removeFromStorage
+    removeTokenStorage
 } from './services/token.service.'
 export { useUserHook } from './hooks/useUser'
 export { useModalRef } from './hooks/useModalRef'

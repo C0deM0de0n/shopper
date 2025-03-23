@@ -1,8 +1,10 @@
 import { 
   axiosClassic, 
   saveTokenStorage, 
+  removeTokenStorage,
   IUser, 
-  IUserResponse 
+  IUserResponse, 
+  axiosWithAuth,
 } from "@/shared";
 
 export const authService = {
@@ -15,4 +17,12 @@ export const authService = {
 
     return response.data;
   },
+
+  async logout() {
+    const response = await axiosWithAuth.post('/auth/logout')
+
+    if(response.status === 200) removeTokenStorage()
+
+    return response
+  }
 };

@@ -8,7 +8,7 @@ interface Props {
     errors: FieldErrors<IUser>
 }
 
-export const Input: FC<Props> = ({ register, errors }) => {
+export const AuthFormInput: FC<Props> = ({ register, errors }) => {
     return (
         <>
             <TextField

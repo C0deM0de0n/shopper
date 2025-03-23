@@ -1,5 +1,5 @@
 import axios, { type CreateAxiosDefaults } from "axios";
-import { getNewTokens, getAccessToken, removeFromStorage} from "../services/token.service.";
+import { getNewTokens, getAccessToken, removeTokenStorage} from "../services/token.service.";
 import { errorCatch } from "./error";
 
 const options: CreateAxiosDefaults = {
@@ -37,7 +37,7 @@ axiosWithAuth.interceptors.response.use(
                 await getNewTokens.getNewTokens()
                 return axiosWithAuth.request(originalRequest)
             } catch {
-                if(errorCatch(error) === 'Invalid or expired token') removeFromStorage()
+                if(errorCatch(error) === 'Invalid or expired token') removeTokenStorage()
             }
         }
 

@@ -6,7 +6,7 @@ interface Props {
     setAuhtType: () => void
 }
 
-export const FormButton: FC<Props> = ({ isLogin, setAuhtType }) => {
+export const AuthEntryBtn: FC<Props> = ({ isLogin, setAuhtType }) => {
     return (
         <div className='flex items-center justify-center gap-5 w-full h-10'>
             <Button

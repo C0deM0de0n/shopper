@@ -3,6 +3,7 @@ import { userService } from "@/shared";
 
 export const useUserHook = () => {
     const { 
+        refetch,
         data,
         isLoading: isLoadingUser, 
         isSuccess: isSuccessUser,
@@ -11,9 +12,7 @@ export const useUserHook = () => {
         queryKey: ['get user'],
         queryFn: () => userService.getById(),
         retry: false,
-        staleTime: 1000 * 60 * 5,
-        gcTime: 1000 * 60 * 10,
     })
 
-    return { user: data?.data, isLoadingUser, isSuccessUser, isErrorUser }
+    return { refetch, user: data?.data, isLoadingUser, isSuccessUser, isErrorUser }
 }
