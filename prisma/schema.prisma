@@ -14,18 +14,3 @@ model User {
   email     String    @unique
   password  String
 }
-
-model Product {
-  id        String    @id @default(cuid())
-  createdAt DateTime  @default(now())      @map("created-at")
-  updatedAt DateTime  @updatedAt           @map("updated-at")
-  name      String
-  title     String
-  icon      String
-  reviews   Int
-  topPicks  Int        @map("top-picks")
-  watches   Int       
-  wireless  Boolean?
-  wired     Boolean?  
-  price     Int
-}

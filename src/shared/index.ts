@@ -9,6 +9,7 @@ export {
 export { useUserHook } from './hooks/useUser'
 export { useModalRef } from './hooks/useModalRef'
 export { Container } from './ui/Container'
+export { AddButton } from './ui/AddButton'
 export { TokenType } from './enums/tokens'
 export { TokenExpiration } from './enums/tokens'
 export type { IUser, IUserResponse } from './types/user'

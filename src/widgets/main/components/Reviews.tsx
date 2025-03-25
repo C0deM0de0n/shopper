@@ -10,9 +10,10 @@ export const Reviews: FC<Props> = ({}) => {
         <div className='relative flex items-center w-[200px] h-[60px]'>
             {reviews.map((item, id) => 
                 <Image 
+                    key={id} 
                     className='absolute'
                     style={{ left: `${id * 40}px`, }}
-                    key={id} src={item.icon}
+                    src={item.icon}
                     width={60} height={60} alt='review'
                 />
             )}
