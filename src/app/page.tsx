@@ -1,5 +1,5 @@
 import { AuthModal, Product, Navigation } from "@/features";
-import { Main, Featured } from "@/widgets";
+import { Main, Featured, Footer } from "@/widgets";
 
 export default function Home() {
 
@@ -11,6 +11,7 @@ export default function Home() {
       <Featured />
       <h1 id='Products' className='mt-20 text-center text-4xl font-[600]'>Trending Earphones</h1>
       <Product/>
+      <Footer />
     </div>
   );
 }
