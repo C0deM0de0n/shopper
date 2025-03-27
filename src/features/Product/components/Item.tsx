@@ -13,9 +13,9 @@ interface Props {
 export const Item: FC<Props> = ({ icon, name, rating, views, price, save }) => {
   return (
     <div>
-        <div className='flex flex-col justify-center items-center relative w-[361px] h-[438px] bg-[#E0EFFF] rounded-[5px]'>
+        <div className='flex flex-col justify-center items-center  relative w-[361px] h-[438px] bg-[#E0EFFF] rounded-[5px]'>
             <Image src={icon} width={168} height={168} alt='product'/>
-            <div className='flex flex-col p-5  justify-center gap-2 w-[319px] h-[164px] bg-white rounded-[5px]'>
+            <div className='flex mt-10 flex-col p-5  justify-center gap-2 w-[319px] h-[164px] bg-white rounded-[5px]'>
               <h1 className='tetx-[35px] font-medium'>{name}</h1>
               <div className='flex  gap-5'>
                 <div className='flex gap-2'>

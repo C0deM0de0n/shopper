@@ -1,17 +1,24 @@
 import { FC } from 'react';
-import { AddButton } from '@/shared';
 import { Button } from '@mui/material';
 
 
-interface Props {}
+interface Props { }
 
-export const Buttons: FC<Props> = ({}) => {
+export const Buttons: FC<Props> = ({ }) => {
   return (
     <div className='flex'>
-        <AddButton />
-        <Button className='w-[263px] h-[70px]' variant={'text'}>
-            <p className='text-white text-[16px] font-medium'>View more</p>
-        </Button>
+      <Button
+        className={`w-[263px] h-[70px]`}
+        sx={{
+          backgroundColor: '#10B981',
+          '&:hover': { backgroundColor: '#20B2AA' }
+        }}
+        variant={'contained'}>
+        <p className='text-white text-[16px] font-medium'>Add to cart</p>
+      </Button>
+      <Button className='w-[263px] h-[70px]' variant={'text'}>
+        <p className='text-white text-[16px] font-medium'>View more</p>
+      </Button>
     </div>
   );
 };
