@@ -1,4 +1,4 @@
-import { ILocalCart } from "@/shared";
+import { ILocalCart } from "@/enteties"
 
 export const plucCart = (id: string, array: ILocalCart[]): ILocalCart[] => {
     return array.map(item => 

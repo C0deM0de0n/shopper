@@ -21,7 +21,7 @@ export const AuthLogout: FC<Props> = ({ logout, loading, error }) => {
                 : <Button
                     onClick={() => logout()}
                     type={'submit'}
-                    className='w-40 h-12'
+                    className='w-40 h-14'
                     variant={'contained'}
                     sx={{
                         backgroundColor: '#10B981',

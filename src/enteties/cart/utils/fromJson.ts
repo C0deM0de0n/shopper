@@ -1,4 +1,4 @@
-import { ILocalCart } from "@/shared"
+import { ILocalCart } from "../model/localCart.types"
 
 export const fromJson = (array: string): ILocalCart[] => {
     const data = JSON.parse(array)

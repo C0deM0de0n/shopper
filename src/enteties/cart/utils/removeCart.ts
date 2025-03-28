@@ -1,4 +1,4 @@
-import { ILocalCart } from "@/shared"
+import { ILocalCart } from "@/enteties"
 import { minusCart } from "./minusCart"
 import { fromJson } from "./fromJson"
 import { toJson } from "./toJson"

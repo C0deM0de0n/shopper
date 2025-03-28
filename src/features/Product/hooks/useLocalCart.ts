@@ -1,15 +1,21 @@
-import { useEffect } from "react"
-import { ILocalCart } from "@/shared"
-import { fromJson } from "../utils/fromJson"
+import { useEffect } from "react";
+import { useAppDispatch } from "@/app/store";
+import { ILocalCart } from "@/enteties";
+import { fromJson } from "../../../enteties/cart/utils/fromJson";
 
-interface IProps {
-    setInCart: (array: ILocalCart[] | []) => void
+interface ReduxActionFunction<ILocalCart> {
+  (data: ILocalCart[]): { type: string; payload: ILocalCart[] };
 }
 
-export const useLocalCart = ({ setInCart }: IProps) => {
-    useEffect(() => {
-        const localCart: string | null = localStorage.getItem('cart')
-        const array = localCart ? fromJson(localCart) : []
-        setInCart(array)
-    }, [])
+interface Props<ILocalCart> {
+  setLocalCart: ReduxActionFunction<ILocalCart>;
 }
+
+export const useLocalCart = ({ setLocalCart }: Props<ILocalCart>) => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const localCart: string | null = localStorage.getItem("cart");
+    const array: ILocalCart[] = localCart ? fromJson(localCart) : [];
+    dispatch(setLocalCart(array));
+  }, []);
+};

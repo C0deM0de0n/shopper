@@ -1,4 +1,4 @@
-import { ILocalCart } from "@/shared";
+import { ILocalCart } from "../model/localCart.types"
 
 export const minusCart = (id: string, array: ILocalCart[]): ILocalCart[] => {
     return array.map(item =>

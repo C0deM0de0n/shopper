@@ -24,7 +24,7 @@ export const useModalRef = <T> ({closeRef, reduxFC, data}: Props<T>) => {
         dispatch(reduxFC(data));
       }
     },
-    [closeRef, dispatch]
+    [closeRef, dispatch, reduxFC, data]
   );
 
   useEffect(() => {
@@ -33,5 +33,5 @@ export const useModalRef = <T> ({closeRef, reduxFC, data}: Props<T>) => {
     return () => {
       document.removeEventListener("click", closeModal);
     };
-  }, [closeRef, dispatch, closeModal]);
+  }, [closeModal]);
 };
