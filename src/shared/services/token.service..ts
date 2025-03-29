@@ -32,6 +32,6 @@ export const saveTokenStorage = (accessToken: string) => {
 }
 
 export const removeTokenStorage = () => {
-    Cookies.remove(TokenType.accessToken)
+    Cookies.remove(TokenType.accessToken, { domain: 'elaborate-douhua-170d6e.netlify.app'})
 }
 
