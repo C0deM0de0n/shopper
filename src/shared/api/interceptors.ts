@@ -3,7 +3,7 @@ import { getNewTokens, getAccessToken, removeTokenStorage} from "../services/tok
 import { errorCatch } from "./error";
 
 const options: CreateAxiosDefaults = {
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://elaborate-douhua-170d6e.netlify.app",
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 };

@@ -2,24 +2,21 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
-    const res = NextResponse.next();
+  const res = NextResponse.next();
 
-    res.headers.append("Access-Control-Allow-Credentials", "true");
-    res.headers.append("Access-Control-Allow-Origin", "*");
-    res.headers.append("Access-Control-Allow-Methods", "GET,DELETE,PATCH,POST,PUT,OPTIONS");
-    res.headers.append(
-        "Access-Control-Allow-Headers",
-        "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization"
-    );
+  res.headers.set("Access-Control-Allow-Origin", "https://elaborate-douhua-170d6e.netlify.app"); 
+  res.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.headers.set("Access-Control-Allow-Credentials", "true");
 
 
-    if (req.method === "OPTIONS") {
-        return new NextResponse(null, { status: 204, headers: res.headers });
-    }
+  if (req.method === "OPTIONS") {
+    return new NextResponse(null, { status: 204, headers: res.headers });
+  }
 
-    return res;
+  return res;
 }
 
 export const config = {
-    matcher: "/api/:path*",
+  matcher: "/api/:path*",
 };
