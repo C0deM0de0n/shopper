@@ -25,7 +25,7 @@ export const CartContent: FC<Props> = ({ }) => {
         }, 0)
 
 
-    }, [localCart, products])
+    }, [localCart, productMap])
 
     return (
         <div className='flex flex-col gap-5 mt-5'>
@@ -33,16 +33,14 @@ export const CartContent: FC<Props> = ({ }) => {
                 <>
                     {localCart.map((item, id) => {
                         const product = productMap.get(item.id)!
-                        return { product, count: item.count }
-                    })
-                        .map((i, id) =>
+                        return (
                             <CartItem
-                                key={i.product.id}
-                                product={i.product}
-                                count={i.count}
+                                key={item.id}
+                                product={product}
+                                count={item.count}
                             />
                         )
-                    }
+                    })}
                     <CartSum sum={totalSum} />
                 </>
             )

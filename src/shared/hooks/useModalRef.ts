@@ -17,21 +17,21 @@ export const useModalRef = <T> ({closeRef, reduxFC, data}: Props<T>) => {
 
   const closeModal = useCallback(
     (event: MouseEvent) => {
-      if (
-        closeRef.current &&
-        !closeRef.current.contains(event.target as Node)
-      ) {
-        dispatch(reduxFC(data));
-      }
+        if (
+          closeRef.current &&
+          !closeRef.current.contains(event.target as Node)
+        ) {
+          dispatch(reduxFC(data));
+        }
     },
     [closeRef, dispatch, reduxFC, data]
   );
 
   useEffect(() => {
-    document.addEventListener("click", closeModal);
+    document.addEventListener("mousedown", closeModal);
 
     return () => {
-      document.removeEventListener("click", closeModal);
+      document.removeEventListener("mousedown", closeModal);
     };
   }, [closeModal]);
 };
