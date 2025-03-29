@@ -3,5 +3,5 @@ export { AuthModal } from "./auth/components/AuthModal";
 export { AuthProfile } from "./auth/components/AuthProfile";
 export { CartButton } from './cart/components/CartButton';
 export { Navigation } from "./navigation/Navigation";
-export { Product } from './Product/Product';
+export { Product } from './product/Product';
 export { CartModal } from './cart/CartModal';

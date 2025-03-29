@@ -7,7 +7,7 @@ import {
 } from '@/enteties';
 import { Container } from '@/shared';
 import { Item } from './components/Item';
-import { AddToCart } from './components/addToCart';
+import { AddToCart } from './components/AddToCart';
 import { useLocalCart } from './hooks/useLocalCart';
 
 interface Props { }

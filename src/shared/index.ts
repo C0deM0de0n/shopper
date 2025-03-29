@@ -8,7 +8,7 @@ export {
 } from './services/token.service.'
 export { useUserHook } from './hooks/useUser'
 export { useModalRef } from './hooks/useModalRef'
-export { Container } from './ui/Container'
+export { Container } from './ui/Сontainer'
 export { AddButton } from './ui/AddButton'
 export { TokenType } from './enums/tokens'
 export { TokenExpiration } from './enums/tokens'
