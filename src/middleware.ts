@@ -5,7 +5,7 @@ export function middleware(req: NextRequest) {
     const res = NextResponse.next();
 
     res.headers.append("Access-Control-Allow-Credentials", "true");
-    res.headers.append("Access-Control-Allow-Origin", "https://elaborate-douhua-170d6e.netlify.app");
+    res.headers.append("Access-Control-Allow-Origin", "*");
     res.headers.append("Access-Control-Allow-Methods", "GET,DELETE,PATCH,POST,PUT,OPTIONS");
     res.headers.append(
         "Access-Control-Allow-Headers",
