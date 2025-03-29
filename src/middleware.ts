@@ -4,8 +4,8 @@ import type { NextRequest } from 'next/server';
 export function middleware(req: NextRequest) {
   const res = NextResponse.next();
 
-  // Добавляем CORS-заголовки
-  res.headers.set('Access-Control-Allow-Origin', 'https://magical-heliotrope-2b7f79.netlify.app');
+  
+  res.headers.set('Access-Control-Allow-Origin', 'https://elaborate-douhua-170d6e.netlify.app/');
   res.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
