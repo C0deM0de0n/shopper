@@ -6,7 +6,7 @@ interface Props { }
 
 export const Buttons: FC<Props> = ({ }) => {
   return (
-    <div className='flex'>
+    <div className='flex max-md:flex-col max-md:items-center'>
       <Button
         className={`w-[263px] h-[70px]`}
         sx={{

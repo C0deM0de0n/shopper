@@ -19,7 +19,7 @@ export const CartModal: FC<Props> = ({ }) => {
     })
 
     return (
-        <div ref={cartModalRef} className='absolute top-25 right-0 w-2xl p-5 min-h-60 bg-[#4484FF] rounded-[10px]'>
+        <div ref={cartModalRef} className='absolute top-25 right-0 w-2xl p-5 min-h-60 bg-[#4484FF] rounded-[10px] max-lg:w-96 max-sm:w-72'>
             <div className='flex w-full justify-between items-center'>
                 <h1 className='text-white text-2xl font-medium'>Cart products</h1>
                 <Image 

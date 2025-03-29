@@ -7,7 +7,7 @@ interface Props {}
 
 export const Navigation: FC<Props> = ({}) => {
   return (
-    <div className='flex gap-50'>
+    <div className='flex gap-50 max-xl:gap-30 max-lg:gap-10'>
         <Services />
         <About />
         <Help />

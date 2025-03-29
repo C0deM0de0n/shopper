@@ -6,7 +6,7 @@ interface Props {}
 
 export const Reviews: FC<Props> = ({}) => {
   return (
-    <div className='flex items-center gap-5'>
+    <div className='flex items-center gap-5 max-sm:flex-col'>
         <div className='relative flex items-center w-[200px] h-[60px]'>
             {reviews.map((item, id) => 
                 <Image 
@@ -18,7 +18,7 @@ export const Reviews: FC<Props> = ({}) => {
                 />
             )}
         </div>
-        <h1 className='text-[26px] font-medium'>15k Well <br /> Reviews</h1>
+        <h1 className='text-[26px] font-medium max-sm:text-[18px]'>15k Well <br /> Reviews</h1>
     </div>
   );
 };

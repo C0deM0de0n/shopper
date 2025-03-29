@@ -13,7 +13,7 @@ export const AuthButton: FC<Props> = ({ }) => {
     <Button
       onClick={() => dispatch(setAuthModal(true))}
       type={'submit'}
-      className='w-60 h-14'
+      className='w-60 h-14 max-lg:w-full'
       sx={{
         backgroundColor: '#10B981',
         '&:hover': { backgroundColor: '#20B2AA' }

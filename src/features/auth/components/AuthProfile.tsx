@@ -25,8 +25,10 @@ export const AuthProfile: FC<Props> = () => {
         <>
             {isLoadingUser && <AuthSkeleton />}
             {isSuccessUser && user && !isSuccessLogout &&
-                <div className='relative flex items-center gap-5'>
-                    <AuthCircle />
+                <div className='relative flex items-center gap-5 max-lg:justify-end'>
+                    <div className='max-lg:hidden'>
+                        <AuthCircle />
+                    </div>
                     <AuthLogout 
                         logout={logoutUser}
                         loading={isLoadingLogout}

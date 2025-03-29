@@ -11,8 +11,8 @@ interface Props { }
 export const Main: FC<Props> = ({ }) => {
   return (
     <Container>
-      <div className='flex justify-between w-full mt-20'>
-        <div className='flex flex-col gap-12'>
+      <div className='flex justify-between w-full mt-20 max-lg:justify-center'>
+        <div className='flex flex-col gap-12 max-lg:justify-center max-lg:items-center'>
           <Overview />
           <BuyButton />
           <Reviews />

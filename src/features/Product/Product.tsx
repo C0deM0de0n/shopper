@@ -23,7 +23,7 @@ export const Product: FC<Props> = ({ }) => {
 
   return (
     <Container>
-      <div className='flex mt-20 justify-between gap-10 flex-wrap'>
+      <div className='flex mt-20 justify-between gap-10 flex-wrap  max-xl:gap-5 max-md:justify-center'>
         {products.map((product, id) =>
           <div key={id} className='flex flex-col gap-5'>
             <Item product={product}/>

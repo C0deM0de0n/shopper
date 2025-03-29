@@ -18,7 +18,7 @@ export const Footer: FC<Props> = ({ }) => {
                     <GetStarted />
                     <Line />
                 </div>
-                <div className='flex justify-between'>
+                <div className='flex justify-between max-md:flex-col max-md:gap-5'>
                     <Subscribe />
                     <Navigation />
                 </div>

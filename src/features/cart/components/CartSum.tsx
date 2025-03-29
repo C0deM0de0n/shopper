@@ -13,7 +13,7 @@ export const CartSum: FC<Props> = ({ sum }) => {
                 <p className='text-[17px]'>{sum}$</p>
             </h1>
             <Button
-                className='w-[230px] h-12'
+                className='w-[230px] h-12 max-lg:w-[150px]'
                 sx={{
                     backgroundColor: '#10B981',
                     '&:hover': { backgroundColor: '#20B2AA' }
