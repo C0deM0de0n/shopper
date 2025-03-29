@@ -8,7 +8,7 @@ export function saveRefreshToken(res: NextResponse, refreshToken: string) {
 
   res.cookies.set(TokenType.refreshToken, refreshToken, {
     httpOnly: true,
-    domain: 'localhost',
+    domain: 'elaborate-douhua-170d6e.netlify.app',
     secure: true,
     sameSite: 'strict',
     expires: expiresIn
@@ -18,7 +18,7 @@ export function saveRefreshToken(res: NextResponse, refreshToken: string) {
 export function removeRefreshTokenResponse(res: NextResponse) {
   res.cookies.set(TokenType.refreshToken, '', {
     httpOnly: true,
-    domain: 'localhost',
+    domain: 'elaborate-douhua-170d6e.netlify.app',
     secure: true,
     sameSite: 'strict',
     expires: new Date(0)

@@ -25,7 +25,7 @@ export const saveTokenStorage = (accessToken: string) => {
     oneHourFromNow.setHours(oneHourFromNow.getHours() + 1);
 
     Cookies.set(TokenType.accessToken, accessToken, {
-        domain: 'localhost',
+        domain: 'elaborate-douhua-170d6e.netlify.app',
         sameSite: 'Strict',
         expires: oneHourFromNow
     })
