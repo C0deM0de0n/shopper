@@ -1,4 +1,4 @@
 [build]
-  command = "yarn prisma generate && yarn build"
+  command = "yarn prisma db push && yarn prisma generate && yarn build"
   publish = ".next"
   functions = "netlify/functions"
